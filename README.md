@@ -4,6 +4,9 @@
 
 The **Stock Trend Prediction Web App** is a web application that provides stock price predictions based on historical data. Using a simple linear regression model, it forecasts future stock prices and visualizes both historical and predicted data. This app is built using Flask for the backend, Plotly for interactive plotting, and includes a user-friendly HTML interface for ease of use.
 
+![image](https://github.com/user-attachments/assets/998f4f53-1f4d-403d-bcfa-14cd5017cb2c)
+
+
 ## Features
 
 - Fetches historical stock data from Yahoo Finance.

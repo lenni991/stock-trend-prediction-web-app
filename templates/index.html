@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trend Prediction</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 5px;
+        }
+        #plot {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Trend Prediction</h1>
+    <form id="prediction-form">
+        <input type="text" id="ticker" name="ticker" placeholder="Stock Ticker (e.g., AAPL)" required>
+        <input type="date" id="start_date" name="start_date" required>
+        <input type="date" id="end_date" name="end_date" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="plot"></div>
+    <div id="rmse"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#prediction-form').submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/predict',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        Plotly.newPlot('plot', JSON.parse(response.plot));
+                        $('#rmse').text('Root Mean Squared Error: ' + response.rmse.toFixed(2));
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

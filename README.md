@@ -1,28 +1,24 @@
 # Stock Trend Prediction Web App
 
-## Description
+**Stock Trend Prediction Web App** forecasts stock prices using a linear regression model. It visualizes historical and predicted stock data and evaluates model performance with RMSE.
 
-The **Stock Trend Prediction Web App** is a web application that provides stock price predictions based on historical data. Using a simple linear regression model, it forecasts future stock prices and visualizes both historical and predicted data. This app is built using Flask for the backend, Plotly for interactive plotting, and includes a user-friendly HTML interface for ease of use.
-
-![image](https://github.com/user-attachments/assets/998f4f53-1f4d-403d-bcfa-14cd5017cb2c)
-
+![Preview](https://github.com/user-attachments/assets/998f4f53-1f4d-403d-bcfa-14cd5017cb2c)
 
 ## Features
 
-- Fetches historical stock data from Yahoo Finance.
-- Prepares and processes data for modeling.
-- Trains a linear regression model to predict future stock prices.
-- Visualizes historical and predicted stock prices with Plotly.
-- Provides Root Mean Squared Error (RMSE) for model performance evaluation.
-- Allows users to download historical stock data as a CSV file.
+- Fetches stock data from Yahoo Finance.
+- Processes and models data with linear regression.
+- Visualizes data using Plotly.
+- Provides RMSE for model accuracy.
+- Allows CSV download of historical data.
 
-## Technologies Used
+## Technologies
 
-- **Backend:** Flask (Python)
-- **Data Handling:** pandas, NumPy
-- **Machine Learning:** scikit-learn
+- **Backend:** Flask
+- **Data:** pandas, NumPy
+- **ML:** scikit-learn
 - **Visualization:** Plotly
-- **Frontend:** HTML, JavaScript (jQuery)
+- **Frontend:** HTML, JavaScript
 
 ## Installation
 
